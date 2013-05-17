@@ -1,0 +1,146 @@
+/*
+    ESTILOS ////////////////////////////////////////////////////////   
+*/
+
+/* Globales */
+
+body, h1, h2, h3, h4, a:link, 
+input, ul {
+    color: #444;  
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; 
+    position: relative; 
+    -webkit-font-smoothing: antialiased;  
+    font-weight: 300;
+    }
+input[type="submit"], 
+input[type="reset"], button, 
+.button {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;  
+    font-weight: 300;   
+    }
+a:hover {
+    color: #999;
+    }
+.botonera {
+    margin-top: 20px;    
+    } 
+
+.contenedor {
+    width: 960px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    }
+
+    .cabecera {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0 20px 0;
+        }
+
+        .logo {
+            width: 50%;
+            float: left;
+            }
+        .menu-login {
+            width: 50%;
+            float: right;
+            }
+            .menu-usuario {
+                width: auto;
+                float: right;
+                margin: 0;
+                }
+                .menu-usuario .menu-item {
+                    font-size: 0.8em;
+                    }
+                a.cerrar-cuenta {
+                    color: #fff;
+                    }
+
+        .navegacion {
+            width: 100%; 
+            float: left;
+            border-top: 1px solid #ccc;   
+            }
+            .menu-navegacion .menu-item,
+            .menu-usuario .menu-item {
+                    width: auto;
+                    float: left;
+                    margin: 0;
+                    }
+            .menu-navegacion .menu-item {
+                    margin: 0 20px 0 0;
+                    }
+
+    .contenido {
+        width: 75%;
+        }
+
+        .contenedor-posts {}
+            .post {}
+                .titulo-post {}
+                .fecha-post {
+                    color: #999;
+                    font-size: .7em;
+                    }
+                .contenido-post {
+                    margin-top: 10px;
+                    }
+                .comparte-post {
+                    margin: 10px 0 0 0;
+                    }
+
+        .contenedor-pagina {}
+            .titulo-pagina {}
+                .enlace-pagina {}
+            .contenido-pagina {}
+            .comparte-pagina {
+                margin: 10px 0 0 0;
+                }
+
+    .aside {
+        width: 25%;
+        float: right;
+        padding: 0 0 0 20px;
+        overflow: hidden;
+        }
+
+        .aside-interior {}
+            .aside-item {}
+                .aside-titulo {}
+                .aside-texto {}
+                .aside-lista {}
+                    .lista-item {}
+                        .lista-enlace {}
+
+    .footer {
+        width: 100%;
+        color: #999;
+        }
+
+        .footer-item {
+            width: 50%;
+            display: inline;
+            float: left;
+            }
+            .footer-creditos {
+                
+                }
+            .footer-info {
+                width: auto;
+                float: right;
+                display: inline;
+                }
+
+/*
+    HELPERS ///////////////////////////////////////////    
+*/
+
+.contenedor, .cabecera, .contenido, .aside, .footer     { outline: 0px solid #999;}
+.validation-summary-errors                              { background: #e14e4e; padding: 10px;}
+.validation-summary-errors ul li                        { color: #ffffff; }
+.field-validation-error                                 { color: #e14e4e; font-size: .8em;}
+.message-success                                        { background: #3eab3a; padding: 10px; }
+p.message-success                                       { color: #ffffff; }

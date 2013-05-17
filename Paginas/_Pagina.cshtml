@@ -1,0 +1,14 @@
+﻿@{
+    var pagina = Page.Pagina;
+    var url = "Pagina.cshtml"+"?id=" + @pagina.ID;
+}
+
+<div class="contenedor-pagina">
+
+    <div id="contenido-pagina" class="contenido-pagina">@pagina.Contenido</div>
+        
+    <div class="comparte-pagina">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-text="@pagina.Titulo" data-url="@url">Compartelo en Twitter</a>
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+    var db = Database.Open("Blog");
+    var paginas = db.Query("SELECT ID,Titulo,Contenido FROM Paginas");
+}
+
+<div class="logo">
+    <h2><a class="log-enlace" href="~/">Petit CMS</a></h2>
+</div>
+
+<div id="login" class="menu-login">
+
+    @if (WebSecurity.IsAuthenticated) {
+
+        <ul class="menu-usuario">
+            <li class="menu-item">¡Hola, @WebSecurity.CurrentUserName!</li>
+            <li class="menu-item"><a href="~/Posts/CrearPost.cshtml">Nuevo post</a></li>
+            <li class="menu-item"><a href="~/Paginas/CrearPagina.cshtml">Nueva pagina</a></li>
+            <li class="menu-item"><a class="boton-cuenta" href="~/Account/Manage" title="Tu cuenta">Cuenta</a></li>
+            <li class="menu-item">
+                <form id="logoutForm" action="~/Account/Logout" method="post">
+                    @AntiForgery.GetHtml()
+                    <a class="cerrar-cuenta button alert small" href="javascript:document.getElementById('logoutForm').submit()">Salir</a>
+                </form>
+            </li>
+        </ul>
+
+        } else {
+
+        <ul  class="menu-usuario">
+            <li class="menu-item"><a class="button success small" href="~/Account/Login">Iniciar sesión</a></li>
+            <li class="menu-item"><a class="button small" href="~/Account/Register">Registrarse</a></li>
+        </ul>
+    }
+
+</div>
+
+<div class="navegacion">
+
+        <ul class="menu-navegacion">
+            <li class="menu-item"><a href="~/">Home</a></li>
+            
+                @foreach(var pagina in paginas) 
+                {
+                    @RenderPage("~/Paginas/_ListaPagina.cshtml", new { Pagina = pagina })
+                }
+            
+        </ul>
+
+</div>

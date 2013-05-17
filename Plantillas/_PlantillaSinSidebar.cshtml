@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+    
+    @RenderPage("_Head.cshtml")
+
+    <body>
+
+        <div class="contenedor">
+
+            <div class="cabecera">
+                @RenderPage("~/Vistas/_Cabecera.cshtml")
+            </div>
+
+            <div class="contenido-full">
+                @RenderBody()
+            </div>
+
+            <div class="footer">
+                @RenderPage("~/Vistas/_Footer.cshtml")
+            </div>
+
+        </div>
+
+        @RenderPage("_Scripts.cshtml")
+
+    </body>
+</html>

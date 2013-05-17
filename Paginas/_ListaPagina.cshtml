@@ -1,0 +1,9 @@
+﻿@{
+    var pagina = Page.Pagina;
+    var baseUrl = "http://localhost:56544";
+    var prefijo = "/Pagina.cshtml"+"?id=";
+    var url = @baseUrl + @prefijo + @pagina.ID;
+}
+    <li class="menu-item">
+        <a href="@url">@pagina.Titulo</a>
+    </li>

@@ -1,0 +1,41 @@
+﻿@{
+    var db = Database.Open("Blog");
+    var paginas = db.Query("SELECT ID,Titulo,Contenido FROM Paginas"); 
+}
+
+<ul class="aside-interior">
+
+    <!-- Descomenta para activar la lista de páginas en la barra lateral -->
+    <li class="aside-item">
+    <h4 class="aside-titulo">Páginas</h4>
+        <ul class="aside-lista">
+
+            @foreach(var pagina in paginas) 
+            {
+                @RenderPage("~/Paginas/_ListaPagina.cshtml", new { Pagina = pagina })
+            }
+
+        </ul>
+    </li>
+
+    <li class="aside-item">
+        <h4 class="aside-titulo">Sobre esta web</h4>
+        <p class="aside-texto">
+            Aqui pondremos la descripción del sitio
+        </p>
+    </li>
+
+    <li class="aside-item">
+        <h4 class="aside-titulo">Ejemplo de lista</h4>
+        <p class="aside-texto">
+            Aqui pondremos una lista de enlaces
+        </p>
+        <ul class="aside-lista">
+            <li class="lista-item"><a class="lista-enlace">Lorem ipsum</a></li>
+            <li class="lista-item"><a class="lista-enlace">Dolor sit</a></li>
+            <li class="lista-item"><a class="lista-enlace">Amet adiscipi</a></li>
+        </ul>
+    </li>
+
+</ul>
+

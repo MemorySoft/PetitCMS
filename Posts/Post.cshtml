@@ -1,0 +1,8 @@
+﻿@{
+    Layout = "~/Plantillas/_Plantilla.cshtml";
+
+    var db = Database.Open("Blog");
+    var post = db.QuerySingle("SELECT ID,Titulo,Fecha,Contenido FROM Posts WHERE ID = @0", Request["id"]);
+}
+
+            @RenderPage("_Post.cshtml", new { Post = post })

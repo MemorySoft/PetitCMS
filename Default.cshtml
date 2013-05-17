@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Plantillas/_Plantilla.cshtml";
+    Page.Title = "Inicio";
+
+    var db = Database.Open("Blog");
+    var posts = db.Query("SELECT ID,Titulo,Fecha,Contenido FROM Posts");
+    var paginas = db.Query("SELECT ID,Titulo,Contenido FROM Paginas");
+}   
+        <div class="contenedor-posts">
+
+            @foreach(var post in posts) 
+            {
+                @RenderPage("~/Posts/_Post.cshtml", new { Post = post })
+            }
+
+        </div>  
+
+        
+        
+        
+ 
+        
+       

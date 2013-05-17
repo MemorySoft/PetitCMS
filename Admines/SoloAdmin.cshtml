@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Plantillas/_Plantilla.cshtml";
+    PageData["Title"] = "Solo para admines";
+}
+
+@if ( Roles.IsUserInRole("admin")) {
+    <span> Welcome <b>@WebSecurity.CurrentUserName</b>! </span>
+}
+else {
+     Response.Redirect("~/Admines/AdminError");
+}

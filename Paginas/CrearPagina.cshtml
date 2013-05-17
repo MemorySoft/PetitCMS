@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Plantillas/_Plantilla.cshtml";    
+    Page.Title = "Crear una nueva página";
+
+    var titulo = Request["Titulo"];
+    var contenido = Request["Contenido"];
+
+    // Validamos en POST no en el GET inicial
+    if(IsPost) 
+    {
+        if(titulo.IsEmpty()) 
+        {
+            ModelState.AddError("Titulo", "Te has olvidado el título, colegui...");
+        }
+        if(contenido.IsEmpty()) 
+        {
+            ModelState.AddError("Contenido","No hagas una página vacia, al menos hasta que tengamos un método para editar... :D");
+        }
+    }
+   
+}
+
+ @if(IsPost && ModelState.IsValid)
+    {
+        Database.Open("Blog")
+            .Execute("INSERT INTO Paginas (Titulo, Contenido)" + 
+            "VALUES(@0,@1)", 
+            titulo, contenido);
+
+            <!-- Guardamos la salida para hacer debug -->
+            <div>
+                <h2>Valores posteados</h2>
+
+                <p>
+                    <label>Titulo</label>
+                    <span>@titulo</span>
+                </p>
+
+                <p>
+                    <label>Contenido</label>
+                    <span>@contenido</span>
+                </p>
+
+            </div>
+            
+    }
+
+        <h1>@Page.Title</h1>
+
+        <form method="post" action="">
+            <div>
+                
+                @Html.ValidationSummary()
+
+                <div>
+                    @Html.ValidationMessage("Titulo","")
+                    <label for="Titulo">Título</label>
+                    <input type="text" name="Titulo" value="@titulo" />
+                </div>
+
+                <div>
+                    @Html.ValidationMessage("Contenido","")
+                    <label for="Contenido">Contenido</label>
+                    <textarea cols="60" rows="10" name="Contenido">
+                        @contenido
+                    </textarea>
+                </div>
+
+                <div class="botonera">
+                    <button class="button success small" type="submit">Publicar</button>
+                    <button class="button alert small" type="reset">Borrar</button>
+                </div>
+
+            </div>
+        </form>
+        <hr />
+
