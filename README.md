@@ -5,7 +5,7 @@ Un CMS pequeñito pequeñito hecho con Razor, solo para practicar
 
 Versión 0.0.1 Alfa
 
-## Descripción
+** Descripción
 
 Petit CMS es un pequeño ejercició que realizé para aprender Razor. La intención inicial no fué crear 
 un script de gestión de contenidos para entornos de producción sino más bien disponer de un boilerplate
@@ -17,7 +17,7 @@ se pueden crear dos tipos de contenidos: páginas y artículos.
 La interfaz de usuario está basada en Foundation3 pero no el grid, que se implementará en futuras versiones 
 si las hubiere. Usa la fuente Open Sans desde el CDN de Google Fonts.
 
-## Instalación
+** Instalación
 
 Para instalar Petit CMS necesitarás:
 
@@ -28,12 +28,12 @@ Para instalar Petit CMS necesitarás:
 
 Copia este repositorio en tu maquina local o descargalo como zip y descomprimelo en el lugar que prefieras 
 
-#### En el servidor
+**** En el servidor
 
 Crea un nuevo sitio web usando en Administrador de IIS, arrastra los archivos desde el repositorio hasta la 
 ubicación fisica del sitio web yconfigura los enlaces y los puertos de la manera habitual.
 
-#### En local
+**** En local
 
 La manera más fácil de instalar Petit CMS en una maquina local es lanzándolo desde WebMAtrix:
 
